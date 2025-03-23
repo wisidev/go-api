@@ -19,9 +19,7 @@ func main() {
 	}
 
 	ProductRepository := repository.NewProductRepository(dbConnection)
-
 	ProductUseCase := usecase.NewProductUseCase(ProductRepository)
-
 	ProductController := controller.NewProductController(ProductUseCase)
 
 	server.GET("/ping", func(ctx *gin.Context) {
