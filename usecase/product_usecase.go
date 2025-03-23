@@ -2,14 +2,16 @@ package usecase
 
 import (
 	"go-api/model"
+	"go-api/repository"
 )
 
 type ProductUsecase struct {
-	//repsitory
+	repository repository.ProductRepository
 }
 
-func NewProductUseCase() ProductUsecase {
+func NewProductUseCase(repo repository.ProductRepository) ProductUsecase {
 	return ProductUsecase{
+		repository: repo,
 	}
 }
 
